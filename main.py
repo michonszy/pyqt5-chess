@@ -29,16 +29,69 @@ def make_a_move():
         if from_x == to_x and from_y == to_y:
             print("No co Ty w to samo miejsce będziesz kładł?")
         else:
-        #sprawdzenie zakresu ruchu piona
+        #zakres ruchu piona
             if start[from_x][from_y] == "Pb" or start[from_x][from_y] == "Pw":
                 if from_y == to_y and to_x == (from_x+1):
-                    print("Ruch dozwolony")
+                    print("Ruch dozwolony, poruszam pionem")
                     start[to_x][to_y] = start[from_x][from_y]
                     start[from_x][from_y] = " "
                 else:
-                    print("Ruch niedozwolony")
+                    print("Ruch niedozwolony dla piona")
             else:
                 print("To nie Pion")
+        #zakres ruchu wieży
+            if start[from_x][from_y] == "Rb" or start[from_x][from_y] == "Rw":
+                if from_y == to_y or from_x == to_x:
+                    print("Ruch dozwolony, poruszam wieżą")
+                    start[to_x][to_y] = start[from_x][from_y]
+                    start[from_x][from_y] = " "
+                else:
+                    print("Ruch niedozwolony dla wieży")
+            else:
+                print("To nie Wieża")
+        #zakres ruchu konia
+            if start[from_x][from_y] == "Knb" or start[from_x][from_y] == "Knw":
+                if (from_x == (to_x+2) and from_y == (to_y-1)) or (from_x == (to_x+1) and from_y == (to_y-2)) or (from_x == (to_x-1) and from_y == (to_y-2)) or (from_x == (to_x-2) and from_y == (to_y-1)) or (from_x == (to_x-2) and from_y == (to_y+1)) or (from_x == (to_x-1) and from_y == (to_y+2)) or (from_x == (to_x+1) and from_y == (to_y+2)) or (from_x == (to_x+2) and from_y == (to_y+2)):
+                    print("Ruch dozwolony, poruszam koniem")
+                    start[to_x][to_y] = start[from_x][from_y]
+                    start[from_x][from_y] = " "
+                else:
+                    print("Ruch niedozwolony dla konia")
+            else:
+                print("To nie Koń")
+        #zakres ruchu gońca
+            if start[from_x][from_y] == "Bb" or start[from_x][from_y] == "Bw":
+                if from_y == to_y or from_x == to_x:
+                    print("Ruch dozwolony, poruszam gońcem")
+                    start[to_x][to_y] = start[from_x][from_y]
+                    start[from_x][from_y] = " "
+                else:
+                    print("Ruch niedozwolony dla gońca")
+            else:
+                print("To nie Goniec")
+
+        #zakres ruchu damy
+            if start[from_x][from_y] == "Qb" or start[from_x][from_y] == "Qw":
+                if from_y == to_y or from_x == to_x:
+                    print("Ruch dozwolony, poruszam damą")
+                    start[to_x][to_y] = start[from_x][from_y]
+                    start[from_x][from_y] = " "
+                else:
+                    print("Ruch niedozwolony dla damy")
+            else:
+                print("To nie Dama")
+        #zakres ruchu króla
+            if start[from_x][from_y] == "Kb" or start[from_x][from_y] == "Kw":
+                if from_y == to_y or from_x == to_x:
+                    print("Ruch dozwolony, poruszam królem")
+                    start[to_x][to_y] = start[from_x][from_y]
+                    start[from_x][from_y] = " "
+                else:
+                    print("Ruch niedozwolony dla króla")
+            else:
+                print("To nie Król")
+
+
 
 
 print("Oto obecna plansza: ")
