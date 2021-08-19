@@ -8,8 +8,8 @@ from PyQt5.QtGui import QCursor
 app = QApplication(sys.argv)
 window = QWidget()
 window.setWindowTitle("ZAP Image Tools")
-window.setFixedWidth(700)
-window.setFixedHeight(700)
+window.setFixedWidth(800)
+window.setFixedHeight(800)
 
 window.move(500, 200)
 
@@ -50,42 +50,42 @@ def createPlansza():
                 else:
                     name.setStyleSheet(white)
             grid.addWidget(name, x, i)
-            # if start[x][i] == "Rw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/rook_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Knw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/knight_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Bw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/bishop_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Qw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/queen_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Kw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/king_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Pw":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/piece_white.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Pb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/piece_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Kb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/king_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Qb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/queen_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Bb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/bishop_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Knb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/knight_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
-            # if start[x][i] == "Rb":
-            #     name_of_figure = QPixmap("/home/szymon/PycharmProjects/test/chess/rook_black.png")
-            #     name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Rw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/rook_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Knw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/knight_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Bw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/bishop_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Qw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/queen_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Kw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/king_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Pw":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/piece_white.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Pb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/piece_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Kb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/king_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Qb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/queen_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Bb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/bishop_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Knb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/knight_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
+            if start[x][i] == "Rb":
+                name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/rook_black.png")
+                name.setPixmap(name_of_figure.scaled(90,90))
 
 createPlansza()
 window.show()
