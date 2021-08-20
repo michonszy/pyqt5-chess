@@ -1,15 +1,25 @@
 import sys
+from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
 
+
+
 app = QApplication(sys.argv)
 window = QWidget()
-window.setWindowTitle("ZAP Image Tools")
+window.setWindowTitle("Chess")
 window.setFixedWidth(800)
-window.setFixedHeight(800)
+window.setFixedHeight(800) 
+
+class ClickLabel(QtWidgets.QLabel):
+    clicked = QtCore.pyqtSignal()
+
+    def mousePressEvent(self, event):
+        self.clicked.emit()
+        QtWidgets.QLabel.mousePressEvent(self, event)
 
 window.move(500, 200)
 
@@ -27,6 +37,11 @@ start = [["Rw","Knw","Bw","Qw","Kw","Bw","Knw","Rw"],
          ["Pb","Pb","Pb","Pb","Pb","Pb","Pb","Pb"],
          ["Rb","Knb","Bb","Qb","Kb","Bb","Knb","Rb"]]
 
+def clicked(name, letter, column,x,y):
+    def whoami():
+        print("Pozycja: " + str(letter)+ str(column))
+        print("Jest to x: " + str(x) + " ; y: " + str(y))
+    name.clicked.connect(whoami)
 def createPlansza():
     black = "background-color:#6A4B35; color:#CDBDB1;"
     white = "background-color:#CDBDB1; color:#6A4B35;"
@@ -37,8 +52,10 @@ def createPlansza():
             column=i+1
             name = letter+ str(column)
             name = QLabel(name)
+            name = ClickLabel()
             name.setAlignment(QtCore.Qt.AlignCenter)
-
+            
+            clicked(name,letter,column,x,i)
             if x%2 == 0:
                 if i%2==0:
                     name.setStyleSheet(black)
@@ -87,6 +104,9 @@ def createPlansza():
                 name_of_figure = QPixmap("/home/chrupek/Documents/Github/pyqt5-chess/images/rook_black.png")
                 name.setPixmap(name_of_figure.scaled(90,90))
 
+def make_a_move():
+    print("Wykonuję ruch")
+    
 createPlansza()
 window.show()
 window.setLayout(grid)
